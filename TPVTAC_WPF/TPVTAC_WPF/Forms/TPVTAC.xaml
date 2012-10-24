@@ -1,0 +1,16 @@
+﻿<Window x:Class="TPVTAC_WPF.Forms.TPVTAC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TPVTAC" Height="529" Width="821" Name="ftpvt" WindowState="Maximized">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StatusBar Name="statusBar1" Height="20" DockPanel.Dock="Bottom" />
+            <DockPanel LastChildFill="True">
+                <DockPanel Width="200" DockPanel.Dock="Left">
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                </DockPanel>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

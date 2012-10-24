@@ -1,0 +1,13 @@
+﻿<Window x:Class="TPVTAC_WPF.Forms.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LogIn" Height="239" Width="453" Name="frmLogin" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Background="#FFAEA2B7">
+    <Grid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="165,47,0,0" Name="txtUsuario" VerticalAlignment="Top" Width="189" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="165,87,0,0" Name="txtPassword" VerticalAlignment="Top" Width="189" />
+        <Label Content="Usuario" Height="28" HorizontalAlignment="Left" Margin="56,47,0,0" Name="label1" VerticalAlignment="Top" Width="78" />
+        <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="56,85,0,0" Name="label2" VerticalAlignment="Top" Width="78" />
+        <Button Content="Cancelar" Height="28" HorizontalAlignment="Right" Margin="0,146,73,0" Name="btnCancelar" VerticalAlignment="Top" Width="126" Click="btnCancelar_Click" />
+        <Button Content="Aceptar" Height="28" HorizontalAlignment="Left" Margin="80,146,0,0" Name="btnAceptar" VerticalAlignment="Top" Width="126" Click="btnAceptar_Click" />
+    </Grid>
+</Window>
