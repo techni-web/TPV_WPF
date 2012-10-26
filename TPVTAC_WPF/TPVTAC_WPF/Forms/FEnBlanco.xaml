@@ -3,6 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="FEnBlanco" Height="300" Width="300" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="248*" />
+            <RowDefinition Height="13*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24*" />
+            <ColumnDefinition Width="254*" />
+        </Grid.ColumnDefinitions>
+        <Image Height="69" HorizontalAlignment="Right" Margin="0,0,25,0" x:Name="imgTW" Stretch="Uniform" VerticalAlignment="Bottom" Width="229" Source="/Img/techni.jpg" FlowDirection="LeftToRight" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
+            
+        </Image>
     </Grid>
 </Window>

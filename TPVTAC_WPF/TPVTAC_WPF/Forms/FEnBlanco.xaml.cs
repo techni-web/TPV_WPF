@@ -32,6 +32,7 @@ namespace TPVTAC_WPF.Forms
                 TPVTAC frmPrincipal = new TPVTAC();
                 frmPrincipal.Show();
                 this.Close();
+                
             }
         }
     }

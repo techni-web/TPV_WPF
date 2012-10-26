@@ -23,24 +23,34 @@ namespace TPVTAC_WPF
     {
         public About()
         {
+            this.Cursor = Cursors.Wait;
             InitializeComponent();
+            this.Cursor = Cursors.Arrow;
             
         }
 
         private void about_Loaded(object sender, RoutedEventArgs e)
         {
-            pgBarInicio.Value = 0;
-            for (var i = 0; i <= 100; i++)
-            {
-                pgBarInicio.Value = i;
-            }
+            
         }
 
         private void pgBarInicio_Loaded(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void Storyboard_Completed(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Wait;
             Forms.FEnBlanco frmEnBlanco = new Forms.FEnBlanco();
             frmEnBlanco.Show();
+            frmEnBlanco = null;
+            //MainWindow objMainWindow = new MainWindow();
+            //objMainWindow.ShowDialog();
+            //objMainWindow = null;
             this.Close();
+            //this.Dispatcher.InvokeShutdown();
+            this.Cursor = Cursors.Arrow;
         }
     }
 }

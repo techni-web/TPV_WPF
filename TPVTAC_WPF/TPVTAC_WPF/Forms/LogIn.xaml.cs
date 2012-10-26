@@ -23,7 +23,10 @@ namespace TPVTAC_WPF.Forms
 
         public LogIn()
         {
+            this.Cursor = Cursors.Wait;
             InitializeComponent();
+            txtUsuario.Focus();
+            this.Cursor = Cursors.Arrow;
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
@@ -53,7 +56,7 @@ namespace TPVTAC_WPF.Forms
                 {
                     DataRow dtrow = dtUsuarios.Rows[0];
                     _pswd = dtrow["PWD"].ToString().Trim();
-                    if (_pswd == txtPassword.Text.Trim())
+                    if (_pswd == txtPassword.Password.Trim())
                     {
                         DialogResult = true;
                     }
@@ -69,6 +72,11 @@ namespace TPVTAC_WPF.Forms
 
             }
 
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
 
     }
