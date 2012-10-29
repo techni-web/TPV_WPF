@@ -12,7 +12,6 @@ namespace TPVTAC_WPF.DBModule
     class db
     {
 
-        string sCnn;
         public String _dbError = String.Empty;
 
         public Boolean SqlExcecuteQuery(string Conexion, string Query, ref DataTable datos, int timeout)

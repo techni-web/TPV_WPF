@@ -12,7 +12,7 @@ namespace TPVTAC_WPF
     class dbUsuarios
     {
         #region Variables Globales
-        private String _sqlConexion = ConfigurationSettings.AppSettings["conexion"].ToString();
+        private String _sqlConexion = System.Configuration.ConfigurationManager.AppSettings["conexion"].ToString();
         #endregion
 
         #region Propiedades Globales

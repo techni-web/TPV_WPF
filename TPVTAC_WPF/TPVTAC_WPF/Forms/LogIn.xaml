@@ -35,15 +35,15 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="113"/>
             <ColumnDefinition Width="285"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Row="1" Text="User Name:" TextWrapping="Wrap"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Row="2" Text="Password:" TextWrapping="Wrap"/>
-        <TextBox HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Center" Width="140" Grid.Column="1" Grid.Row="1" Text="" TextWrapping="Wrap" MaxLines="1" MaxLength="50" FontSize="12" x:Name="txtUsuario" TabIndex="0" />
-        <PasswordBox HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Center" Width="140" Grid.Column="1" Grid.Row="2" MaxLength="32" FontSize="12" x:Name="txtPassword" TabIndex="1" />
-        <Button HorizontalAlignment="Left" Margin="23,0,0,-14" VerticalAlignment="Bottom" Width="72" Height="26" Content="Login" Grid.Column="1" Grid.Row="3" Foreground="#FFFFFFFF" FontSize="11" x:Name="btnLogin" TabIndex="2" Click="btnAceptar_Click" />
-        <Button Margin="99,0,114,-14" VerticalAlignment="Bottom" Width="72" Height="26" Content="Cancel" Grid.Column="1" Grid.Row="3" Foreground="#FFFFFFFF" FontSize="11" IsCancel="True" x:Name="btnCancel" TabIndex="3" Click="btnCancelar_Click" />
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Row="1" Text="User Name:" TextWrapping="Wrap" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Row="2" Text="Password:" TextWrapping="Wrap" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1" Text="" TextWrapping="Wrap" MaxLines="1" MaxLength="50" FontSize="12" x:Name="txtUsuario" TabIndex="0" />
+        <PasswordBox HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="2" MaxLength="32" FontSize="12" x:Name="txtPassword" TabIndex="1" />
+        <Button HorizontalAlignment="Left" Margin="25,0,0,-14" VerticalAlignment="Bottom" Width="80" Height="26" Content="Login" Grid.Column="1" Grid.Row="3" Foreground="#FFFFFFFF" FontSize="11" x:Name="btnLogin" TabIndex="2" Click="btnAceptar_Click" />
+        <Button Margin="109,0,0,-14" VerticalAlignment="Bottom" Width="80" Height="26" Content="Cancel" Grid.Column="1" Grid.Row="3" Foreground="#FFFFFFFF" FontSize="11" IsCancel="True" x:Name="btnCancel" TabIndex="3" Click="btnCancelar_Click" HorizontalAlignment="Left" />
         <!--<TextBox Height="23" HorizontalAlignment="Left" Margin="165,47,0,0" Name="txtUsuario" VerticalAlignment="Top" Width="189" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="165,87,0,0" Name="txtPassword" VerticalAlignment="Top" Width="189" />
         <Label Content="Usuario" Height="28" HorizontalAlignment="Left" Margin="56,47,0,0" Name="label1" VerticalAlignment="Top" Width="78" />

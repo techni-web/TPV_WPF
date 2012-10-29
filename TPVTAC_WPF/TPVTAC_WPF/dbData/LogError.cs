@@ -49,7 +49,7 @@ namespace TPVTAC_WPF.DBModule
 
         public void LogTxt()
         {
-            String pathtxt = ConfigurationSettings.AppSettings["PathLogTexto"] + DateTime.Now.ToString("yyyy-MM-dd") + "LogErrror.txt";
+            String pathtxt = System.Configuration.ConfigurationManager.AppSettings["PathLogTexto"] + DateTime.Now.ToString("yyyy-MM-dd") + "LogErrror.txt";
             StreamWriter sw = new StreamWriter(pathtxt, true, System.Text.Encoding.Default);
             try 
             {
