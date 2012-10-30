@@ -75,6 +75,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
+    <Reference Include="VIBlend.WPF.Navigation">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\VIBlend\WPF Controls v.5.0\VIBlend.WPF.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="VIBlend.WPF.Utilities">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\VIBlend\WPF Controls v.5.0\VIBlend.WPF.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -124,6 +130,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbData\dbZonas.cs" />
     <Compile Include="dbData\db.cs" />
     <Compile Include="dbData\dbUsuarios.cs" />
     <Compile Include="dbData\LogError.cs" />
@@ -136,6 +143,7 @@
     <Compile Include="Forms\TPVTAC.xaml.cs">
       <DependentUpon>TPVTAC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="miMesa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -188,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\cash-register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\delete_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2462,203 +2462,260 @@
         </Setter>
     </Style>
 
-        <!--Expnader Style-->
-        <ScaleTransform ScaleX=".9" ScaleY=".9" x:Key="paginationbuttonScale"/>
-        <DataTemplate x:Key="rotaitonTemplate">
-            <ContentPresenter Content="{TemplateBinding Property=ContentControl.Content}">
+    <Style x:Key="btnCierreCaja" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/cash-register-icon.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
-                <ContentPresenter.LayoutTransform>
-                    <RotateTransform Angle="-90" />
-                </ContentPresenter.LayoutTransform>
-            </ContentPresenter>
-        </DataTemplate>
+    <!--Expnader Style-->
+    <ScaleTransform ScaleX=".9" ScaleY=".9" x:Key="paginationbuttonScale"/>
+    <DataTemplate x:Key="rotaitonTemplate">
+        <ContentPresenter Content="{TemplateBinding Property=ContentControl.Content}">
 
-        <Style x:Key="LeftPanelCollpasedButtonStyle" TargetType="{x:Type ToggleButton}">
+            <ContentPresenter.LayoutTransform>
+                <RotateTransform Angle="-90" />
+            </ContentPresenter.LayoutTransform>
+        </ContentPresenter>
+    </DataTemplate>
+
+    <Style x:Key="LeftPanelCollpasedButtonStyle" TargetType="{x:Type ToggleButton}">
 
 
-            <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="White"/>
 
-            <Setter Property="BorderThickness" Value="3"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="0,0,1,1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border BorderBrush="#FF283239" BorderThickness="1,1,1,1" Width="{TemplateBinding Width}" Height="Auto" >
-                            <Border BorderBrush="#FFFFFFFF" BorderThickness="1,1,1,1" x:Name="border" Background="#FF9DACB6" Padding="5,5,5,5">
-                                <Grid ClipToBounds="False">
-                                    <ContentPresenter RenderTransformOrigin="0.5,0.5" x:Name="con" HorizontalAlignment="Center" TextBlock.TextAlignment="Center" ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      Content="{TemplateBinding Content}" 
-                                                      VerticalAlignment="Center">
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0,0,1,1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border BorderBrush="#FF283239" BorderThickness="1,1,1,1" Width="{TemplateBinding Width}" Height="Auto" >
+                        <Border BorderBrush="#FFFFFFFF" BorderThickness="1,1,1,1" x:Name="border" Background="#FF9DACB6" Padding="5,5,5,5">
+                            <Grid ClipToBounds="False">
+                                <ContentPresenter RenderTransformOrigin="0.5,0.5" x:Name="con" HorizontalAlignment="Center" TextBlock.TextAlignment="Center" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                    Content="{TemplateBinding Content}" 
+                                                    VerticalAlignment="Center">
 
-                                    </ContentPresenter>
-                                </Grid>
-                            </Border>
+                                </ContentPresenter>
+                            </Grid>
                         </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="Width" Value="30">
-                                <Setter Property="ContentTemplate" TargetName="con" Value="{DynamicResource rotaitonTemplate}"/>
-                                <Setter Property="Height" Value="250"/>
-                                <Setter Property="VerticalAlignment" Value="Stretch"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-                                <Setter Property="Background" TargetName="border">
-                                    <Setter.Value>
-                                        <LinearGradientBrush EndPoint="1.071,0.5" StartPoint="0.107,0.5">
-                                            <GradientStop Color="#FF283B48" Offset="0.434"/>
-                                            <GradientStop Color="#FF4A677A" Offset="0"/>
-                                            <GradientStop Color="#FF243643" Offset="0.82"/>
-                                            <GradientStop Color="#FF304655" Offset="0.425"/>
-                                            <GradientStop Color="#FF567992" Offset="1"/>
-                                            <GradientStop Color="#FF385061" Offset="0.425"/>
-                                        </LinearGradientBrush>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Width" Value="30">
+                            <Setter Property="ContentTemplate" TargetName="con" Value="{DynamicResource rotaitonTemplate}"/>
+                            <Setter Property="Height" Value="250"/>
+                            <Setter Property="VerticalAlignment" Value="Stretch"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="Background" TargetName="border">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="1.071,0.5" StartPoint="0.107,0.5">
+                                        <GradientStop Color="#FF283B48" Offset="0.434"/>
+                                        <GradientStop Color="#FF4A677A" Offset="0"/>
+                                        <GradientStop Color="#FF243643" Offset="0.82"/>
+                                        <GradientStop Color="#FF304655" Offset="0.425"/>
+                                        <GradientStop Color="#FF567992" Offset="1"/>
+                                        <GradientStop Color="#FF385061" Offset="0.425"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
 
-                            <Trigger Property="IsChecked" Value="true">
-                                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-                                <Setter Property="Background" TargetName="border">
-                                    <Setter.Value>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FF0D5F7E" Offset="0"/>
-                                            <GradientStop Color="#FF527F8F" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </Setter.Value>
-                                </Setter>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="Background" TargetName="border">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF0D5F7E" Offset="0"/>
+                                        <GradientStop Color="#FF527F8F" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
 
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="RenderTransform" Value="{DynamicResource paginationbuttonScale}" TargetName="con"/>
-                            </Trigger>
-                            <Trigger Property="ToggleButton.IsChecked" Value="true"/>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-                                <Setter Property="Background" TargetName="border" Value="#FF304655"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="RenderTransform" Value="{DynamicResource paginationbuttonScale}" TargetName="con"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="Background" TargetName="border" Value="#FF304655"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
-        <ControlTemplate x:Key="RightExpander" TargetType="{x:Type Expander}">
-            <Border SnapsToDevicePixels="true" Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                CornerRadius="3">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+    <ControlTemplate x:Key="RightExpander" TargetType="{x:Type Expander}">
+        <Border SnapsToDevicePixels="true" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            CornerRadius="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                    <ToggleButton  Width="{TemplateBinding ActualWidth}"   Margin="0,1,0,1" MinHeight="0" MinWidth="30" x:Name="HeaderSite" 
-                                              Style="{StaticResource LeftPanelCollpasedButtonStyle}" Content="{TemplateBinding Header}" 
-                                              ContentTemplate="{TemplateBinding HeaderTemplate}" 
-                                              ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" 
-                                              FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" 
-                                              FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" 
-                                              FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" 
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              Padding="{TemplateBinding Padding}" 
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
-                                              IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" DockPanel.Dock="Top"/>
+                <ToggleButton  Width="{TemplateBinding ActualWidth}"   Margin="0,1,0,1" MinHeight="0" MinWidth="30" x:Name="HeaderSite" 
+                                            Style="{StaticResource LeftPanelCollpasedButtonStyle}" Content="{TemplateBinding Header}" 
+                                            ContentTemplate="{TemplateBinding HeaderTemplate}" 
+                                            ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" 
+                                            FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" 
+                                            FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" 
+                                            FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" 
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                            Padding="{TemplateBinding Padding}" 
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                            IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" DockPanel.Dock="Top"/>
 
-                    <Popup  x:Name="popup" AllowsTransparency="True"  IsOpen="False" Placement="Bottom" PlacementTarget="{Binding ElementName=HeaderSite}">
-                        <Grid>
+                <Popup  x:Name="popup" AllowsTransparency="True"  IsOpen="False" Placement="Bottom" PlacementTarget="{Binding ElementName=HeaderSite}">
+                    <Grid>
 
-                            <ContentControl x:Name="shadow" Visibility="Collapsed" HorizontalAlignment="Stretch" Style="{DynamicResource ShadowTemplate}" 
-						VerticalAlignment="Stretch" Content="ContentControl"  Opacity="1" 
-						Margin="2,0,2,0" Foreground="#FF000000"/>
-                            <ContentPresenter Opacity="1" MinWidth="220"  HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="ExpandSite" Focusable="false" Visibility="Collapsed" VerticalAlignment="Top" />
-                        </Grid>
+                        <ContentControl x:Name="shadow" Visibility="Collapsed" HorizontalAlignment="Stretch" Style="{DynamicResource ShadowTemplate}" 
+					VerticalAlignment="Stretch" Content="ContentControl"  Opacity="1" 
+					Margin="2,0,2,0" Foreground="#FF000000"/>
+                        <ContentPresenter Opacity="1" MinWidth="220"  HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="ExpandSite" Focusable="false" Visibility="Collapsed" VerticalAlignment="Top" />
+                    </Grid>
 
-                    </Popup>
-                </Grid>
-            </Border>
-            <ControlTemplate.Triggers>
+                </Popup>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
 
-                <Trigger Property="IsExpanded" Value="true">
-                    <Setter TargetName="shadow" Property="Visibility" Value="Visible"/>
-                    <Setter TargetName="popup" Property="Placement" Value="Right"/>
-                    <Setter TargetName="popup" Property="HorizontalOffset" Value="-5"/>
-                    <Setter TargetName="popup" Property="IsOpen" Value="true"/>
-                    <Setter TargetName="ExpandSite" Property="Margin" Value="5,5,5,5"/>
+            <Trigger Property="IsExpanded" Value="true">
+                <Setter TargetName="shadow" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="popup" Property="Placement" Value="Right"/>
+                <Setter TargetName="popup" Property="HorizontalOffset" Value="-5"/>
+                <Setter TargetName="popup" Property="IsOpen" Value="true"/>
+                <Setter TargetName="ExpandSite" Property="Margin" Value="5,5,5,5"/>
 
-                    <Setter Property="Visibility" TargetName="ExpandSite" Value="Visible"/>
-                </Trigger>
+                <Setter Property="Visibility" TargetName="ExpandSite" Value="Visible"/>
+            </Trigger>
 
                 
-                <Trigger Property="IsEnabled" Value="false">
-                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
-        <ControlTemplate x:Key="BottomExpander" TargetType="{x:Type Expander}">
-            <Border SnapsToDevicePixels="true" Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                CornerRadius="3">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+    <ControlTemplate x:Key="BottomExpander" TargetType="{x:Type Expander}">
+        <Border SnapsToDevicePixels="true" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            CornerRadius="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                    <ToggleButton  Width="{TemplateBinding ActualWidth}"   Margin="0,1,0,1" MinHeight="0" MinWidth="30" x:Name="HeaderSite" 
-                                              Style="{StaticResource LeftPanelCollpasedButtonStyle}" Content="{TemplateBinding Header}" 
-                                              ContentTemplate="{TemplateBinding HeaderTemplate}" 
-                                              ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" 
-                                              FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" 
-                                              FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" 
-                                              FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" 
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              Padding="{TemplateBinding Padding}" 
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
-                                              IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" DockPanel.Dock="Top"/>
-                    <Grid x:Name="contentGrid" Grid.Row="1" >
+                <ToggleButton  Width="{TemplateBinding ActualWidth}"   Margin="0,1,0,1" MinHeight="0" MinWidth="30" x:Name="HeaderSite" 
+                                            Style="{StaticResource LeftPanelCollpasedButtonStyle}" Content="{TemplateBinding Header}" 
+                                            ContentTemplate="{TemplateBinding HeaderTemplate}" 
+                                            ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" 
+                                            FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" 
+                                            FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" 
+                                            FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" 
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                            Padding="{TemplateBinding Padding}" 
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                            IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" DockPanel.Dock="Top"/>
+                <Grid x:Name="contentGrid" Grid.Row="1" >
 
-                        <ContentPresenter Opacity="1"  HorizontalAlignment="Stretch" Margin="0,0,0,0" x:Name="ExpandSite" Focusable="false" Visibility="Collapsed" VerticalAlignment="Top" />
-                    </Grid>
+                    <ContentPresenter Opacity="1"  HorizontalAlignment="Stretch" Margin="0,0,0,0" x:Name="ExpandSite" Focusable="false" Visibility="Collapsed" VerticalAlignment="Top" />
                 </Grid>
-            </Border>
-            <ControlTemplate.Triggers>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
 
-                <Trigger Property="IsExpanded" Value="true">
-                    <Setter Property="Visibility" TargetName="ExpandSite" Value="Visible"/>
-                </Trigger>
-                <Trigger Property="IsExpanded" Value="False">
-                    <Setter TargetName="ExpandSite" Property="Visibility" Value="Collapsed"/>
-                </Trigger>
+            <Trigger Property="IsExpanded" Value="true">
+                <Setter Property="Visibility" TargetName="ExpandSite" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsExpanded" Value="False">
+                <Setter TargetName="ExpandSite" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
               
-                <Trigger Property="IsEnabled" Value="false">
-                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
 
-        <Style x:Key="OutlookStyleExpanderStyle" TargetType="{x:Type Expander}">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template" Value="{DynamicResource BottomExpander}">
+    <Style x:Key="OutlookStyleExpanderStyle" TargetType="{x:Type Expander}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template" Value="{DynamicResource BottomExpander}">
 
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="ActualWidth" Value="30">
-                    <Setter Property="Template" Value="{DynamicResource RightExpander}"/>
-                </Trigger>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="ActualWidth" Value="30">
+                <Setter Property="Template" Value="{DynamicResource RightExpander}"/>
+            </Trigger>
 
-            </Style.Triggers>
-        </Style>
+        </Style.Triggers>
+    </Style>
 
-        <!--ExpanderStyle Ends-->
+    <!--ExpanderStyle Ends-->
+
+    
 
 </ResourceDictionary>

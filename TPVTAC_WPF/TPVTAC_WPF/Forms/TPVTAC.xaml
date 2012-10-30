@@ -3,25 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:my="clr-namespace:TPVTAC_WPF"
         mc:Ignorable="d"
-        Title="TPVTAC" Height="529" Width="821" Name="ftpvt" WindowState="Maximized" WindowStyle="None" ResizeMode="CanResize">
+        Title="TPVTAC" Height="529" Width="821" Name="ftpvt" WindowState="Maximized" WindowStyle="None" ResizeMode="CanResize" Loaded="ftpvt_Loaded">
     <Window.Resources>
+        <ControlTemplate x:Key="tmpMesa">
+            <StackPanel>
+                <Image Name="tplImage" Source="/Forms/EVHET.jpg" Stretch="Uniform" Width="60" Height="60">
+
+                </Image>
+                <TextBlock Name="tplTextBlock" Text="Mesa"/>
+                <StackPanel.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Eliminar Mesa">
+                            <MenuItem.Icon>
+                                <Image Source="/Img/delete_16.png" Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </StackPanel.ContextMenu>
+            </StackPanel>
+        </ControlTemplate>
         <!--Animaciones para Panel Colapsable-->
         <Storyboard x:Key="OnUnChecked" FillBehavior="HoldEnd"  >
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Menucontainer" Storyboard.TargetProperty="(FrameworkElement.Width)">
                 <SplineDoubleKeyFrame KeyTime="00:00:00" Value="80"/>
             </DoubleAnimationUsingKeyFrames>
-            <BooleanAnimationUsingKeyFrames FillBehavior="Stop" BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="processMangerExpander" Storyboard.TargetProperty="(Expander.IsExpanded)">
+            <!--<BooleanAnimationUsingKeyFrames FillBehavior="Stop" BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="processMangerExpander" Storyboard.TargetProperty="(Expander.IsExpanded)">
                 <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
-            </BooleanAnimationUsingKeyFrames>
+            </BooleanAnimationUsingKeyFrames>-->
         </Storyboard>
         <Storyboard x:Key="OnChecked" FillBehavior="HoldEnd"  >
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Menucontainer" Storyboard.TargetProperty="(FrameworkElement.Width)">
                 <SplineDoubleKeyFrame KeyTime="00:00:00" Value="250"/>
             </DoubleAnimationUsingKeyFrames>
-            <BooleanAnimationUsingKeyFrames FillBehavior="Stop" BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="processMangerExpander" Storyboard.TargetProperty="(Expander.IsExpanded)">
+            <!--<BooleanAnimationUsingKeyFrames FillBehavior="Stop" BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="processMangerExpander" Storyboard.TargetProperty="(Expander.IsExpanded)">
                 <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
-            </BooleanAnimationUsingKeyFrames>
+            </BooleanAnimationUsingKeyFrames>-->
         </Storyboard>
     </Window.Resources>
     
@@ -32,7 +50,7 @@
         <EventTrigger RoutedEvent="ToggleButton.Unchecked" SourceName="ExpandCollapseToggle">
             <BeginStoryboard Storyboard="{StaticResource OnUnChecked}" />
         </EventTrigger>
-        <EventTrigger RoutedEvent="FrameworkElement.SizeChanged">
+        <!--<EventTrigger RoutedEvent="FrameworkElement.SizeChanged">
             <BeginStoryboard >
                 <Storyboard >
                     <BooleanAnimationUsingKeyFrames FillBehavior="Stop"  BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="processMangerExpander" Storyboard.TargetProperty="(Expander.IsExpanded)">
@@ -40,7 +58,7 @@
                     </BooleanAnimationUsingKeyFrames>
                 </Storyboard>
             </BeginStoryboard>
-        </EventTrigger>
+        </EventTrigger>-->
     </Window.Triggers>
     
     <Grid>
@@ -99,7 +117,7 @@
                             
                             <!--Cuerpo del Menu-->
                             <Border Grid.Row="3" x:Name="Menucontainer" Margin="0,3,0,0" Width="250">
-                                <Grid>
+                               <!-- <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
@@ -125,28 +143,17 @@
                                             </Grid>
                                         </Border>
                                     </Expander>
-									
-									<Expander Header="Views" Style="{DynamicResource OutlookStyleExpanderStyle}" IsExpanded="True" x:Name="processMangerExpander2" Grid.RowSpan="2" >
-                                        <Border BorderBrush="#FFA5A5A5" BorderThickness="1,1,1,1" CornerRadius="2,2,2,2"  >
-                                            <Grid>
-                                                <ListBox BorderThickness="0" ItemContainerStyle="{DynamicResource ExpanderMenuListitemStyle}" VerticalAlignment="Stretch" Height="Auto" Background="#FFE8F2F9">
 
-                                                    <!--<ListBoxItem Content="ListBoxItem"/>
-                                                    <ListBoxItem Content="ListBoxItem"/>
-                                                    <ListBoxItem Content="ListBoxItem" />
-                                                    <ListBoxItem Content="ListBoxItem"/>
-                                                    <ListBoxItem Content="ListBoxItem"/>
-                                                    <ListBoxItem Content="ListBoxItem"  />
-                                                    <ListBoxItem Content="ListBoxItem"/>
-                                                    <ListBoxItem Content="ListBoxItem"/>
-                                                    <ListBoxItem Content="ListBoxItem"  />
-                                                    <ListBoxItem Content="ListBoxItem"/>-->
-                                                </ListBox>
-                                            </Grid>
-                                        </Border>
-                                    </Expander>
-
-                                </Grid>
+                                </Grid>-->
+                                <WrapPanel Name="wrapPanel1" FlowDirection="LeftToRight" Orientation="Horizontal">
+                                    <Button Content="" Height="60" Style="{DynamicResource btnCierreCaja}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                </WrapPanel>
                             </Border>
                             <Rectangle HorizontalAlignment="Stretch" Width="Auto" Stroke="{x:Null}" VerticalAlignment="Top" Height="2" Margin="0,0,0,0" Opacity="0.3" Grid.Row="2" d:LayoutOverrides="GridBox">
                                 <Rectangle.Fill>
@@ -177,7 +184,7 @@
                 	<Grid.RowDefinitions>
                 		<RowDefinition Height="8"/>
                 		<RowDefinition Height="60"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
                 	</Grid.RowDefinitions>
                 	<Rectangle VerticalAlignment="Stretch" StrokeThickness="0" >
                 		<Rectangle.Fill>
@@ -187,7 +194,6 @@
                 			</LinearGradientBrush>
                 		</Rectangle.Fill>
                 	</Rectangle>
-                	<Canvas Margin="0" Grid.Row="2"/>
                 	<Border Margin="0,0,0,0" 
                 		Grid.Row="1" x:Name="ZonasContainer">
                 		<Border.Background>
@@ -197,12 +203,20 @@
                 			</LinearGradientBrush>
                 		</Border.Background>
                 		<Grid >
-                			<StackPanel HorizontalAlignment="Right" Width="Auto" Orientation="Horizontal">
+                			<StackPanel HorizontalAlignment="Left" Width="Auto" Orientation="Horizontal" x:Name="PnlZonas" AllowDrop="True">
                 				<ContentControl Style="{DynamicResource SplitterBG}" Content="ContentControl" Width="1" Height="50"/>
                 			</StackPanel>
                                     
                 		</Grid>
                 	</Border>
+                    <Canvas x:Name="cnvMesas" Background="Transparent" Margin="0" Grid.Row="2" ContextMenuService.ShowOnDisabled="True">
+                        <Canvas.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Crear Nueva Mesa"/>
+                            </ContextMenu>
+                        </Canvas.ContextMenu>
+                        <!--<my:miMesa x:Name="miMesa1" DragDelta="onDragDelta" Canvas.Left="80" Canvas.Top="63.75" Template="{StaticResource tmpMesa}"/>-->
+                    </Canvas>
                 </Grid>
             </Border>
         </Grid>

@@ -45,7 +45,6 @@
             <RowDefinition Height="121*" />
         </Grid.RowDefinitions>
         <Image Name="imgLogo" Stretch="Uniform" Source="Img/techni-web_about.png" Grid.RowSpan="2" />
-        <ProgressBar Height="19" HorizontalAlignment="Right" Margin="0,0,20,12" Name="pgBarInicio" VerticalAlignment="Bottom" Width="148" Grid.Row="1" Loaded="pgBarInicio_Loaded" />
         <Label Content="v 1.0" Height="28" HorizontalAlignment="Left" Margin="83,110,0,0" Name="label1" VerticalAlignment="Top" Width="148" FlowDirection="LeftToRight" Grid.Row="1" />
     </Grid>
 </Window>
