@@ -7,12 +7,12 @@
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.Opacity)">
                 <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
                 <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1" KeySpline="0,0.019,1,1"/>
-                <SplineDoubleKeyFrame KeyTime="00:00:08.5000000" Value="1"/>
-                <SplineDoubleKeyFrame KeyTime="00:00:10" Value="0" KeySpline="0,0,1,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:04.5000000" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0" KeySpline="0,0,1,1"/>
             </DoubleAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.Visibility)">
-                <DiscreteObjectKeyFrame KeyTime="00:00:08.5000000" Value="{x:Static Visibility.Visible}"/>
-                <DiscreteObjectKeyFrame KeyTime="00:00:10" Value="{x:Static Visibility.Collapsed}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:04.5000000" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:05" Value="{x:Static Visibility.Collapsed}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <!--<Storyboard x:Key="StoryboardLoader">
