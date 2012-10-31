@@ -114,5 +114,13 @@ namespace TPVTAC_WPF.Forms
             }
         }
 
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            DialogMain dm = new DialogMain();
+            dm.ShowDialog();
+            //Application.Current.Shutdown();
+        }
+
     }
 }

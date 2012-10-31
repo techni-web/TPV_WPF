@@ -77,14 +77,14 @@
                     <Border Background="{TemplateBinding Background}"  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="15"/>
                                 <RowDefinition Height="*"/>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="60"/>
                             </Grid.RowDefinitions>
 
                             <!-- Header -->
                             <Border Grid.Row="0" x:Name="Header" Background="{DynamicResource BackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,0" CornerRadius="5,5,0,0">
-                                <Grid>
+                                <!--<Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
@@ -93,16 +93,16 @@
                                     <Image Source="{TemplateBinding Icon}" Margin="5,0,0,0" Stretch="Fill"/>
                                     <TextBlock Grid.Column="1" Text="{TemplateBinding Title}" TextWrapping="Wrap" Margin="15,5,10,5" Foreground="{DynamicResource HeaderFontColor}" FontSize="18" VerticalAlignment="Center" FontWeight="Bold" x:Name="HeaderTitle"/>
                                     <Button  Grid.Column="2" Content="X" Style="{DynamicResource RedButtonStyle}" Width="20" Margin="-10,0,0,0" x:Name="btnClose" Command="Close" />
-                                </Grid>
+                                </Grid>-->
                             </Border>
 
                             <!-- Content -->
-                            <Border Grid.Row="1" Background="{DynamicResource InputBackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,1">
+                            <Border Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,1">
                                 <ContentPresenter/>
                             </Border>
 
                             <!-- Footer -->
-                            <Border Grid.Row="2" Background="{DynamicResource BackgroundBrush}" Height="35" x:Name="Footer" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,0,1,1" CornerRadius="0,0,5,5"/>
+                            <Border Grid.Row="2" Background="{DynamicResource BackgroundBrush}" Height="60" x:Name="Footer" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,0,1,1" CornerRadius="0,0,5,5"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>
@@ -1292,14 +1292,17 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="#F3F3F3" Offset="0"/>
         <GradientStop Color="#EBEBEB" Offset="0.5"/>
         <GradientStop Color="#DDDDDD" Offset="0.5"/>
         <GradientStop Color="#CDCDCD" Offset="1"/>
     </LinearGradientBrush>
+    
     <SolidColorBrush x:Key="ButtonNormalBorder2" Color="#FF707070"/>
     <Geometry x:Key="DownArrowGeometry">M 0 0 L 3.5 4 L 7 0 Z</Geometry>
+    
     <Style x:Key="ComboBoxReadonlyToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -1325,11 +1328,13 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" StartPoint="0,0" MappingMode="Absolute">
         <GradientStop Color="#ABADB3" Offset="0.05"/>
         <GradientStop Color="#E2E3EA" Offset="0.07"/>
         <GradientStop Color="#E3E9EF" Offset="1"/>
     </LinearGradientBrush>
+    
     <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="AllowDrop" Value="true"/>
@@ -1344,6 +1349,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -1367,6 +1373,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <ControlTemplate x:Key="ComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
         <Grid x:Name="Placement" SnapsToDevicePixels="true">
             <Grid.ColumnDefinitions>
@@ -1409,6 +1416,7 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
+    
     <Style x:Key="RestaurantComboBoxStyle" TargetType="{x:Type ComboBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource ComboBoxFocusVisual}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
@@ -2484,6 +2492,336 @@
                     </ControlTemplate.Resources>
                     <Grid>
                         <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/cash-register-icon.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="btnUsuarios" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/User.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="btnImagenes" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/Pictures.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="btnCalendar" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/Calender.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="btnExit" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/eqsl_exit.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="btnOK" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/Checked.png" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsCancel" Value="False"/>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Width" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Height" TargetName="leftmenuPanelHeaderUserImage" Value="56"/>
+                            <Setter Property="Margin" TargetName="leftmenuPanelHeaderUserImage" Value="-3"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="btnCancel" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftmenuPanelHeaderUserImage">
+                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Image x:Name="leftmenuPanelHeaderUserImage" Source="/Img/Delete.png" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>

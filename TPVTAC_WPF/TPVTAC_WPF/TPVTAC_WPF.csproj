@@ -107,6 +107,10 @@
       <DependentUpon>About.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="DialogMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\FEnBlanco.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +138,9 @@
     <Compile Include="dbData\db.cs" />
     <Compile Include="dbData\dbUsuarios.cs" />
     <Compile Include="dbData\LogError.cs" />
+    <Compile Include="DialogMain.xaml.cs">
+      <DependentUpon>DialogMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FEnBlanco.xaml.cs">
       <DependentUpon>FEnBlanco.xaml</DependentUpon>
     </Compile>
@@ -202,6 +209,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Pictures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\eqsl_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

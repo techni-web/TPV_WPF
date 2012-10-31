@@ -146,13 +146,11 @@
 
                                 </Grid>-->
                                 <WrapPanel Name="wrapPanel1" FlowDirection="LeftToRight" Orientation="Horizontal">
+                                    <Button Content="" Height="60" Style="{DynamicResource btnExit}" Width="60" Margin="10" Name="btnExit" Click="btnExit_Click" />
                                     <Button Content="" Height="60" Style="{DynamicResource btnCierreCaja}" Width="60" Margin="10" />
-                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
-                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
-                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
-                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
-                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
-                                    <Button Content="" Height="60" Style="{DynamicResource btnImage}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnUsuarios}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnImagenes}" Width="60" Margin="10" />
+                                    <Button Content="" Height="60" Style="{DynamicResource btnCalendar}" Width="60" Margin="10" />                                    
                                 </WrapPanel>
                             </Border>
                             <Rectangle HorizontalAlignment="Stretch" Width="Auto" Stroke="{x:Null}" VerticalAlignment="Top" Height="2" Margin="0,0,0,0" Opacity="0.3" Grid.Row="2" d:LayoutOverrides="GridBox">
